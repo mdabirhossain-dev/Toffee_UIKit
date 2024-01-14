@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bd_cric_time.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
