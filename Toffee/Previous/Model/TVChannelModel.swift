@@ -1,27 +1,22 @@
 //
-//  ViewController.swift
+//  TVChannelModel.swift
 //  Toffee
 //
 //  Created by Md Abir Hossain on 14/1/24.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+
+struct TVChannelModel {
+    let title: String
+    let imageName: String
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    init(title: String, imageName: String) {
+        self.title = title
+        self.imageName = imageName
     }
-    
 }
-
-
-
-
-
-
-
 
 
 //class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -78,4 +73,3 @@ class ViewController: UIViewController {
 //
 //
 //}
-
