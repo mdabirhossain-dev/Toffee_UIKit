@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEJ-G1-LmW">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEJ-G1-LmW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Toffee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Toffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4at-ma-fYJ">
-                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -46,6 +47,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vEJ-G1-LmW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OSu-zj-dis">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -67,7 +69,7 @@
                 <navigationController id="IFU-4q-YxZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="Pao-BX-qsB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BBb-1m-KCI">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -78,21 +80,93 @@
             </objects>
             <point key="canvasLocation" x="483" y="836"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="s7f-tg-Jx5">
             <objects>
-                <viewController id="U77-Ua-h30" sceneMemberID="viewController">
+                <viewController id="U77-Ua-h30" customClass="HomeViewController" customModule="Toffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6de-Cw-4gD">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-Wz-mOl">
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jaf-nj-kOg">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CaroselCell" id="Jb6-Cq-WZZ" customClass="CaroselCell" customModule="Toffee" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kab-K3-Vz9">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-YO-Uwn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dirilis" translatesAutoresizingMaskIntoConstraints="NO" id="Bfk-ok-FUL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Bfk-ok-FUL" firstAttribute="width" secondItem="6hu-YO-Uwn" secondAttribute="width" id="CVv-yV-Y7I"/>
+                                                        <constraint firstItem="Bfk-ok-FUL" firstAttribute="height" secondItem="6hu-YO-Uwn" secondAttribute="height" id="GSo-QG-XNg"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6hu-YO-Uwn" secondAttribute="trailing" id="6Fe-4h-9O4"/>
+                                                <constraint firstItem="6hu-YO-Uwn" firstAttribute="leading" secondItem="kab-K3-Vz9" secondAttribute="leading" id="Ld1-Oy-SQn"/>
+                                                <constraint firstItem="6hu-YO-Uwn" firstAttribute="top" secondItem="kab-K3-Vz9" secondAttribute="top" id="QMm-gJ-S4p"/>
+                                                <constraint firstAttribute="bottom" secondItem="6hu-YO-Uwn" secondAttribute="bottom" id="ugE-ta-HHr"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="412" height="200"/>
+                                        <connections>
+                                            <outlet property="image" destination="Bfk-ok-FUL" id="Cri-UX-vQ0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tsI-ye-GEy">
+                                        <rect key="frame" x="142" y="210" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eYv-cD-I5b">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ucj-Q1-4hA">
+                                        <rect key="frame" x="142" y="348" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PNW-Kf-Aen">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QZu-Cp-9AG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KGT-Wz-mOl" firstAttribute="top" secondItem="QZu-Cp-9AG" secondAttribute="top" id="16s-uL-X8Y"/>
+                            <constraint firstItem="KGT-Wz-mOl" firstAttribute="trailing" secondItem="QZu-Cp-9AG" secondAttribute="trailing" id="GSd-7K-HhS"/>
+                            <constraint firstItem="KGT-Wz-mOl" firstAttribute="leading" secondItem="QZu-Cp-9AG" secondAttribute="leading" id="Itn-dk-hvx"/>
+                            <constraint firstItem="KGT-Wz-mOl" firstAttribute="bottom" secondItem="QZu-Cp-9AG" secondAttribute="bottom" id="a01-XC-Yqo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ed9-DJ-IiQ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="KGT-Wz-mOl" id="l1X-za-N8r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlR-0g-IrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="1546"/>
+            <point key="canvasLocation" x="481.67938931297709" y="1545.7746478873239"/>
         </scene>
         <!--TV-->
         <scene sceneID="uIQ-hI-OOx">
@@ -100,7 +174,7 @@
                 <navigationController id="avV-1S-d8M" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TV" image="play.rectangle" catalog="system" id="hKj-qp-tFg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dGC-wS-E3a">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -125,7 +199,7 @@
                         </imageReference>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mw3-jX-Pd3">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -142,7 +216,7 @@
                 <navigationController id="MxY-s9-uzS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="circle.slash" catalog="system" id="k8p-QS-o5l"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V7l-7s-HA7">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -159,7 +233,7 @@
                 <navigationController id="WiE-Zr-Dbf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Channel" image="person.crop.square" catalog="system" id="Bme-gp-w0p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v04-9D-Xar">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -175,7 +249,7 @@
             <objects>
                 <viewController id="O1I-z2-tc8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yiH-yP-9mY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Vd8-WT-WgZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -191,7 +265,7 @@
             <objects>
                 <viewController id="6ZE-V7-Luq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L2B-Lc-LB6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="XjL-Gf-swk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -207,7 +281,7 @@
             <objects>
                 <viewController id="tug-8X-dfD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aBo-FF-4oX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TQW-Uf-dSf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,7 +297,7 @@
             <objects>
                 <viewController id="lUo-nf-GSq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thK-SH-EDc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qRG-Ha-coZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -236,7 +310,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle.slash" catalog="system" width="128" height="123"/>
+        <image name="circle.slash" catalog="system" width="123" height="128"/>
+        <image name="dirilis" width="1600" height="450"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
