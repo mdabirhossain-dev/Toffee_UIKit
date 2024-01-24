@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CaroselCell: UICollectionViewCell {
+class CaroselCell: UICollectionViewCell, MovieCell {
     static let identifier = String(describing: CaroselCell.self)
     
     @IBOutlet weak var image: UIImageView!
@@ -18,4 +18,7 @@ class CaroselCell: UICollectionViewCell {
 //        button.titleLabel?.text = movie?.title ?? ""
     }
     
+    func movieCell(movie: Movie?) {
+        
+    }
 }

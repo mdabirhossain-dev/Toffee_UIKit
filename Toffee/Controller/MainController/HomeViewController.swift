@@ -57,6 +57,8 @@ extension HomeViewController {
             switch sectionIndex {
             case 0:
                 section = self.getCarosalSection()
+            case 1:
+                section = self.getTVSection()
             default:
                 section = self.getCarosalSection()
             }
@@ -83,6 +85,42 @@ extension HomeViewController {
         
         return section
     }
+    
+    private func getTVSection() -> NSCollectionLayoutSection {
+        // Create Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        // Create group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Create section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
+    }
+    
+    private func getCategoriesSection() -> NSCollectionLayoutSection {
+        // Create Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        // Create group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Create section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
+    }
 }
 
 
@@ -90,9 +128,16 @@ extension HomeViewController {
 extension HomeViewController {
     func configureDataSource() {
         dataSource = MovieDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, movie: Movie) -> UICollectionViewCell? in
-            let reuseIdentifier: String = CaroselCell.identifier
+            let reuseIdentifier: String
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CaroselCell else {
+            switch indexPath.section {
+            case 0: reuseIdentifier = CaroselCell.identifier
+            case 1: reuseIdentifier = TVCell.identifier
+            default: reuseIdentifier = TVCell.identifier
+            }
+            
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MovieCell else {
                 
                 return nil
             }
