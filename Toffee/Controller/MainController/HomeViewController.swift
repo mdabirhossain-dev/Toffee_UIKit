@@ -23,8 +23,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupView() {
-        
         setNavigationBarImage()
+        
+        // Registering header/Title
+        collectionView.register(TitleHeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderReusableView.identifier)
         
         // Configure CollectionView layout
         collectionView.collectionViewLayout = configureCollectionViewLayout()
@@ -101,6 +103,8 @@ extension HomeViewController {
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
+        section.boundarySupplementaryItems = getHeader()
+        
         return section
     }
     
@@ -111,7 +115,7 @@ extension HomeViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         // Create group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.22))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Create section
@@ -119,7 +123,16 @@ extension HomeViewController {
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
+        section.boundarySupplementaryItems = getHeader()
+        
         return section
+    }
+    
+    private func getHeader() -> [NSCollectionLayoutBoundarySupplementaryItem] {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(44))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        
+        return [sectionHeader]
     }
 }
 
@@ -133,9 +146,9 @@ extension HomeViewController {
             switch indexPath.section {
             case 0: reuseIdentifier = CaroselCell.identifier
             case 1: reuseIdentifier = TVCell.identifier
-            default: reuseIdentifier = TVCell.identifier
+            case 2: reuseIdentifier = CategoriesCell.identifier
+            default: reuseIdentifier = CaroselCell.identifier
             }
-            
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MovieCell else {
                 
@@ -146,6 +159,24 @@ extension HomeViewController {
             cell.showMovie(movie: MovieManager.movies[section]?[indexPath.item])
             
             return cell
+        }
+        
+        dataSource.supplementaryViewProvider = {
+            [ weak self] (
+                collectionView: UICollectionView,
+                kind: String,
+                indexPath: IndexPath) -> UICollectionReusableView? in
+            
+            if let self = self, let headerSupplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderReusableView.identifier, for: indexPath) as? TitleHeaderReusableView {
+                
+                let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+                
+                headerSupplementaryView.textLabel.text = section.rawValue
+                
+                return headerSupplementaryView
+            }
+            
+            return nil
         }
     }
     

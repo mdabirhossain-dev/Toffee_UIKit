@@ -35,13 +35,17 @@ struct MovieManager {
             Movie(title: "Zee Bangla", thumbnail: "zee_bangla", backgroundImage: "", icon: "")
         ],
         Section.Categories: [
-            Movie(title: "Drama", thumbnail: "", backgroundImage: "drama", icon: "drama"),
-            Movie(title: "Educational", thumbnail: "", backgroundImage: "educational", icon: "educational"),
-            Movie(title: "Food", thumbnail: "", backgroundImage: "food", icon: "food"),
-            Movie(title: "Kids", thumbnail: "", backgroundImage: "kids", icon: "kids"),
-            Movie(title: "Music", thumbnail: "", backgroundImage: "music", icon: "music"),
-            Movie(title: "Sports", thumbnail: "", backgroundImage: "sports", icon: "sports"),
-            Movie(title: "Web Series", thumbnail: "", backgroundImage: "web_series", icon: "web_series")
+            Movie(title: "Dirilis", thumbnail: "dirilis", backgroundImage: "", icon: ""),
+            Movie(title: "Ontojal", thumbnail: "ontojal", backgroundImage: "", icon: ""),
+            Movie(title: "Rishta", thumbnail: "rishta", backgroundImage: "", icon: ""),
+            Movie(title: "Ural Prem", thumbnail: "ural_prem", backgroundImage: "", icon: "")
+//            Movie(title: "Drama", thumbnail: "", backgroundImage: "drama", icon: "drama_1"),
+//            Movie(title: "Educational", thumbnail: "", backgroundImage: "educational", icon: "educational"),
+//            Movie(title: "Food", thumbnail: "", backgroundImage: "food", icon: "food_1"),
+//            Movie(title: "Kids", thumbnail: "", backgroundImage: "kids", icon: "kids_1"),
+//            Movie(title: "Music", thumbnail: "", backgroundImage: "music", icon: "music_1"),
+//            Movie(title: "Sports", thumbnail: "", backgroundImage: "sports", icon: "sports_1"),
+//            Movie(title: "Web Series", thumbnail: "", backgroundImage: "web_series", icon: "web_series_1")
         ]
     ]
 }
