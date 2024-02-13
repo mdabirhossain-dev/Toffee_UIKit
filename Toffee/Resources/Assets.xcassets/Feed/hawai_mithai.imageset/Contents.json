@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hawai_mithai.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

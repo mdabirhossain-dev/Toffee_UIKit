@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "dear_villain.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

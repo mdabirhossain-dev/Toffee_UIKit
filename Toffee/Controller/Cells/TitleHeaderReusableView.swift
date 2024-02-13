@@ -40,3 +40,35 @@ class TitleHeaderReusableView: UICollectionReusableView {
         )
     }
 }
+
+//class CaroselFooterReusableView: UICollectionReusableView {
+//    static let identifier = String(describing: CaroselFooterReusableView.self)
+//    
+//    let pageControl = UIPageControl()
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        
+//        configure()
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
+//    private func configure() {
+//        addSubview(pageControl)
+//        pageControl.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        let inset: CGFloat = 10
+//        
+//        NSLayoutConstraint.activate(
+//            [
+//                pageControl.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -inset),
+//                pageControl.trailingAnchor.constraint(equalTo: leadingAnchor, constant: inset),
+//                pageControl.topAnchor.constraint(equalTo: topAnchor, constant: inset),
+//                pageControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset)
+//            ]
+//        )
+//    }
+//}

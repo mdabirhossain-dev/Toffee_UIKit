@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="gTV-IL-0wX" customClass="MomentsCell" customModule="Toffee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="175"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="175"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monents2" translatesAutoresizingMaskIntoConstraints="NO" id="NGJ-Eg-hPF">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="175"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yhW-xJ-m0p">
+                        <rect key="frame" x="37" y="76.666666666666671" width="26" height="22"/>
+                        <color key="tintColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="kWT-p3-7U6"/>
+                            <constraint firstAttribute="height" constant="26" id="mRG-xe-xqq"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="NGJ-Eg-hPF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EXA-TB-fms"/>
+                <constraint firstItem="yhW-xJ-m0p" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="IjT-BL-UAl"/>
+                <constraint firstItem="NGJ-Eg-hPF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QLx-5R-bXm"/>
+                <constraint firstItem="yhW-xJ-m0p" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="RDP-Kt-EeU"/>
+                <constraint firstAttribute="trailing" secondItem="NGJ-Eg-hPF" secondAttribute="trailing" id="hAX-So-THu"/>
+                <constraint firstAttribute="bottom" secondItem="NGJ-Eg-hPF" secondAttribute="bottom" id="qmv-59-q4b"/>
+            </constraints>
+            <size key="customSize" width="100" height="175"/>
+            <connections>
+                <outlet property="momentImage" destination="NGJ-Eg-hPF" id="viF-1k-xEs"/>
+                <outlet property="playButton" destination="yhW-xJ-m0p" id="RJP-IU-SNg"/>
+            </connections>
+            <point key="canvasLocation" x="177.09923664122135" y="63.028169014084511"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="monents2" width="115" height="172"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

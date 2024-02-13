@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TrendingCell" customModule="Toffee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="188"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="131" height="188"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GAe-3Q-1lD">
+                        <rect key="frame" x="0.0" y="0.0" width="131" height="188"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="maasranga" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-Fs-GG7">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="iha-9D-Aoh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJn-eq-d61">
+                                <rect key="frame" x="45" y="125" width="41.333333333333343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ6-5R-Hau">
+                                <rect key="frame" x="0.0" y="148" width="131" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tij-yH-fbb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="FOLLOW">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="followButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fAy-f8-LLh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hJ6-5R-Hau" firstAttribute="leading" secondItem="GAe-3Q-1lD" secondAttribute="leading" id="HWn-fb-BMh"/>
+                            <constraint firstAttribute="trailing" secondItem="hJ6-5R-Hau" secondAttribute="trailing" id="WSt-3y-s5m"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="GAe-3Q-1lD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4zY-97-e6a"/>
+                <constraint firstAttribute="bottom" secondItem="GAe-3Q-1lD" secondAttribute="bottom" id="kAA-sH-K4d"/>
+                <constraint firstItem="GAe-3Q-1lD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kYY-xC-Fff"/>
+                <constraint firstAttribute="trailing" secondItem="GAe-3Q-1lD" secondAttribute="trailing" id="ljT-rz-9GU"/>
+            </constraints>
+            <size key="customSize" width="131" height="188"/>
+            <connections>
+                <outlet property="followButton" destination="hJ6-5R-Hau" id="Bcy-YV-SsX"/>
+                <outlet property="trendingImage" destination="jEt-Fs-GG7" id="MiQ-sS-q3Z"/>
+                <outlet property="trendingTitle" destination="uJn-eq-d61" id="KIk-jl-S6q"/>
+            </connections>
+            <point key="canvasLocation" x="11.450381679389313" y="66.901408450704224"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="maasranga" width="761" height="761"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

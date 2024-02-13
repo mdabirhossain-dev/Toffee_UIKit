@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CaroselCell" customModule="Toffee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="306" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ural_prem" translatesAutoresizingMaskIntoConstraints="NO" id="s16-PK-B6M">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="137"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="s16-PK-B6M" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2MK-Ry-RAE"/>
+                <constraint firstItem="s16-PK-B6M" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Oi-0T-ZGd"/>
+                <constraint firstAttribute="bottom" secondItem="s16-PK-B6M" secondAttribute="bottom" id="e38-a6-uRg"/>
+                <constraint firstAttribute="trailing" secondItem="s16-PK-B6M" secondAttribute="trailing" id="tnd-z3-eco"/>
+            </constraints>
+            <size key="customSize" width="306" height="137"/>
+            <connections>
+                <outlet property="caroselImage" destination="s16-PK-B6M" id="OY9-Ii-BIT"/>
+            </connections>
+            <point key="canvasLocation" x="334.35114503816794" y="50.352112676056343"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ural_prem" width="1600" height="450"/>
+    </resources>
+</document>
